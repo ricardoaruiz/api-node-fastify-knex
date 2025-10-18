@@ -1,1 +1,11 @@
+# Dependencies
 node_modules
+
+# Database
+db/*.sqlite
+
+# Environment Variables
+.env
+
+# Build
+build

@@ -1,14 +1,11 @@
-import fastify from 'fastify'
-
-const app = fastify()
-
-app.get('/ping', async (_request, _reply) => 'pong\n')
+/** biome-ignore-all lint/suspicious/noConsole: here is fine */
+import app from './app.js'
+import env from './env/index.js'
 
 app
-	.listen({ port: 3333 })
+	.listen({ port: env.PORT })
 	.then(() => {
-		// biome-ignore lint/suspicious/noConsole: here is fine
-		console.log('Server listening on http://localhost:3333')
+		console.log(`Server listening on port: ${env.PORT}`)
 	})
 	.catch((_err) => {
 		process.exit(1)

@@ -1,0 +1,207 @@
+type: collection.insomnia.rest/5.0
+name: Rocketseat - Transactions
+meta:
+  id: wrk_d1772f0226d642b5be8a1f04628116c1
+  created: 1760624799214
+  modified: 1760624799214
+  description: ""
+collection:
+  - url: localhost:3333/health/check
+    name: Health Check
+    meta:
+      id: req_911517dba5794688b0f6b1670c4e671c
+      created: 1760624809407
+      modified: 1760708516299
+      isPrivate: false
+      description: ""
+      sortKey: -1760626365561.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.1
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Transactions
+    meta:
+      id: fld_c84c8a378fd442bca8d5a7ee8d470a74
+      created: 1760627921816
+      modified: 1760627921816
+      sortKey: -1760627921816
+      description: ""
+    children:
+      - url: localhost:3333/transactions
+        name: Create Transaction
+        meta:
+          id: req_9bec975d2edc43a098e7b183531cc31e
+          created: 1760627925450
+          modified: 1760733608922
+          isPrivate: false
+          description: ""
+          sortKey: -1760627925450
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "dd",
+            	"amount": 10,
+            	"type": "credit1"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3333/transactions
+        name: List Transactions
+        meta:
+          id: req_f134ff0171d947ca96aaa53a1e4c1c98
+          created: 1760628724722
+          modified: 1760638241940
+          isPrivate: false
+          description: ""
+          sortKey: -1760627925550
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3333/transactions/8c6d0e88-75bc-4f37-b40a-ae7b30a0c0f3
+        name: Get Transaction
+        meta:
+          id: req_36d2f33b087347e3bc820bae8ae3b709
+          created: 1760637681453
+          modified: 1760706233512
+          isPrivate: false
+          description: ""
+          sortKey: -1760627925500
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3333/transactions/summary
+        name: Get Summary Transactions
+        meta:
+          id: req_2a8638e726b448eda2b32f98fa615c2c
+          created: 1760638853000
+          modified: 1760638858857
+          isPrivate: false
+          description: ""
+          sortKey: -1760627925525
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Database Check
+    meta:
+      id: fld_89a3908d3a204341bcdfa2aa509d49b5
+      created: 1760707597284
+      modified: 1760708384073
+      sortKey: -1760627143688.75
+      description: ""
+    children:
+      - url: localhost:3333/database-check/tables
+        name: Tables
+        meta:
+          id: req_cf48eecc255442a1b332dc635a8682a3
+          created: 1760707601325
+          modified: 1760708313607
+          isPrivate: false
+          description: ""
+          sortKey: -1760707601325
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:3333/database-check/migrations
+        name: Migrations
+        meta:
+          id: req_48c4eaec4bbe4cfdb573fab24f67d965
+          created: 1760707634378
+          modified: 1760708325829
+          isPrivate: false
+          description: ""
+          sortKey: -1760667763437.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d62cd15651a88a9799bb26544274c98445cb8c52
+    created: 1760624799219
+    modified: 1760722153904
+  cookies:
+    - key: sessionId
+      value: c73b8476-44b2-4d10-bea2-a09a579aaf44.%2Bm3sNftAwJlQVneylsoLzrEBuCsUpsq8CHftUavsYAI
+      maxAge: 604800
+      domain: localhost
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-10-17T17:29:13.904Z
+      lastAccessed: 2025-10-17T17:29:13.904Z
+      sameSite: lax
+      id: 1e8acaf7-d6c1-4353-95c4-5aac8c4bf224
+environments:
+  name: Base Environment
+  meta:
+    id: env_d62cd15651a88a9799bb26544274c98445cb8c52
+    created: 1760624799217
+    modified: 1760624799217
+    isPrivate: false

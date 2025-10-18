@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["src/**/*.{js,ts}", "!**/node_modules"]
+    "includes": ["src/**/*.{js,ts}", "!**/node_modules", "!**/build"]
   },
   "formatter": {
     "enabled": true,
@@ -19,6 +19,9 @@
       "recommended": true,
       "correctness": {
         "noUnusedImports": "error"
+      },
+      "style": {
+        "useFilenamingConvention": "off"
       }
     }
   },
