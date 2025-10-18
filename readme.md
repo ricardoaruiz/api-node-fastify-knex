@@ -1,5 +1,5 @@
-## Orientações
-Ao baixar o projeto rodar:
+# Orientações
+## Ao baixar o projeto:
 
 ```shell
 npm i
@@ -9,6 +9,21 @@ Em seguida:
 
 ```shell
 npm run migrate:latest:local
+```
+
+## Subir a aplicação local dev mode
+```shell
+npm run dev
+```
+
+## Fazer o build da aplicação
+```shell
+npm run build
+```
+
+## Subir a aplicação localmente a partir do build gerado
+```shell
+npm run start:local
 ```
 
 ## Inicializando as configurações do Knex
@@ -30,23 +45,6 @@ npm run knex --  migrate:make create-documents
 ```shell
 npm run migrate:latest:local
 ```
-
-## Subir a aplicação local dev mode
-```shell
-npm run dev
-```
-
-## Fazer o build da aplicação
-```shell
-npm run build
-```
-
-## Subir a aplicação localmente a partir do build gerado
-```shell
-npm run start:local
-```
-
-
 
 ## Knex
 - [Criação de tipagem para as tabelas](https://knexjs.org/guide/#typescript)
