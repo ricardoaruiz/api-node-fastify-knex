@@ -44,7 +44,7 @@ export async function errorHandler(
 
 	return reply.code(StatusCodes.INTERNAL_SERVER_ERROR).send({
 		error: 'Internal Server Error',
-		message: `An unexpected error occurred - ${err.message}`,
+		message: `An unexpected error occurred - ${err.stack}`,
 	})
 }
 
