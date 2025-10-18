@@ -4,68 +4,47 @@ import env from './src/env/index.js'
 type Keys = 'test' | 'local' | 'development' | 'staging' | 'production'
 type DatabaseConfig = Record<Keys, Knex.Config>
 
+const migrations = {
+	extension: 'ts',
+	directory: './db/migrations',
+}
+
 const config: DatabaseConfig = {
+	// Test
 	test: {
-		client: 'sqlite3',
+		client: 'sqlite',
 		useNullAsDefault: true,
 		connection: {
 			filename: env.DATABASE_URL,
 		},
-		migrations: {
-			extension: 'ts',
-			directory: './db/migrations',
-		},
 		debug: false,
+		migrations,
 	},
 
+	// Local
 	local: {
-		client: 'sqlite3',
+		client: 'sqlite',
 		useNullAsDefault: true,
 		connection: {
 			filename: env.DATABASE_URL,
 		},
-		migrations: {
-			extension: 'ts',
-			directory: './db/migrations',
-		},
 		debug: false,
+		migrations,
 	},
 
+	// Development
 	development: {},
-	staging: {},
-	// staging: {
-	// 	client: 'postgresql',
-	// 	connection: {
-	// 		database: 'my_db',
-	// 		user: 'username',
-	// 		password: 'password',
-	// 	},
-	// 	pool: {
-	// 		min: 2,
-	// 		max: 10,
-	// 	},
-	// 	migrations: {
-	// 		tableName: 'knex_migrations',
-	// 	},
-	// },
 
-	production: {},
-	// production: {
-	// 	client: 'postgresql',
-	// 	connection: {
-	// 		database: 'my_db',
-	// 		user: 'username',
-	// 		password: 'password',
-	// 	},
-	// 	pool: {
-	// 		min: 2,
-	// 		max: 10,
-	// 	},
-	// 	migrations: {
-	// 		extension: 'ts',
-	// 		directory: './db/migrations',
-	// 	},
-	// },
+	// Staging
+	staging: {},
+
+	// Production
+	production: {
+		client: 'pg',
+		useNullAsDefault: true,
+		connection: env.DATABASE_URL,
+		migrations,
+	},
 }
 
 export default config
