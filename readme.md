@@ -1,3 +1,16 @@
+## Orientações
+Ao baixar o projeto rodar:
+
+```shell
+npm i
+```
+
+Em seguida:
+
+```shell
+npm run migrate:latest:local
+```
+
 ## Inicializando as configurações do Knex
 https://knexjs.org/guide/migrations.html#migration-cli
 
@@ -9,14 +22,31 @@ https://knexjs.org/guide/migrations.html#migration-cli
 ```
 
 ## Como criar uma migration
-```shel
+```shell
 npm run knex --  migrate:make create-documents
 ```
 
 ## Aplicar todas as migrations faltantes
-```shel
-"knex": "node --env-file=.env --import tsx ./node_modules/knex/bin/cli.js",
+```shell
+npm run migrate:latest:local
 ```
+
+## Subir a aplicação local dev mode
+```shell
+npm run dev
+```
+
+## Fazer o build da aplicação
+```shell
+npm run build
+```
+
+## Subir a aplicação localmente a partir do build gerado
+```shell
+npm run start:local
+```
+
+
 
 ## Knex
 - [Criação de tipagem para as tabelas](https://knexjs.org/guide/#typescript)

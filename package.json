@@ -7,6 +7,7 @@
     "dev": "NODE_ENV=local tsx watch src/server.ts",
     "test": "NODE_ENV=test vitest",
     "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
+    "migrate:latest:local": "NODE_ENV=local npm run knex -- migrate:latest",
     "lint:fix": "ultracite fix",
     "start:local": "NODE_ENV=local node build/server.cjs",
     "build": "tsup src --out-dir build"
